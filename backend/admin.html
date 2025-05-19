@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 text-center">
+    <h1 class="text-2xl font-bold">Lucky Chicken Admin Dashboard</h1>
+  </header>
+
+  <section class="p-6 max-w-4xl mx-auto">
+    <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-red-600 text-white">
+          <th class="px-4 py-2">Order ID</th>
+          <th class="px-4 py-2">Items</th>
+          <th class="px-4 py-2">Total ($)</th>
+          <th class="px-4 py-2">Payment</th>
+          <th class="px-4 py-2">Status</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="orders" class="text-center"></tbody>
+    </table>
+  </section>
+
+  <script>
+    // TODO: Fetch orders from your backend
+    /*
+    fetch('http://localhost:3000/api/orders', {
+      headers: { 'x-api-key': 'yourSecretAdminKey' }
+    })
+      .then(res => res.json())
+      .then(orders => { ... })
+    */
+
+    function updateStatus(id, status) {
+      // TODO: Send status update to backend
+      /*
+      fetch(`http://localhost:3000/api/orders/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type':'application/json',
+          'x-api-key':'yourSecretAdminKey'
+        },
+        body: JSON.stringify({ status })
+      }).then(() => location.reload());
+      */
+    }
+  </script>
+
+</body>
+</html>
