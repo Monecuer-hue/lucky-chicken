@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart - Lucky Chicken</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="succes.html">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <img src="descarga-removebg-preview (1).png" alt="Lucky Chicken Logo" class="h-12">
+    <nav class="space-x-4 text-sm md:text-base">
+      <a href="index.html" class="hover:text-red-600">Home</a>
+      <a href="menu.html" class="hover:text-red-600">Menu</a>
+    </nav>
+  </header>
+
+  <section class="py-10 max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">Your Cart</h2>
+    <ul id="cart-items" class="mb-6 space-y-2"></ul>
+    <p id="total" class="font-bold text-lg mb-4"></p>
+
+    <h3 class="text-xl font-semibold mb-4">Payment Method:</h3>
+    <select id="payment-method" class="w-full p-2 mb-6 border rounded">
+      <option value="ecocash">EcoCash</option>
+      <option value="inbucks">Inbucks</option>
+      <option value="cod">Pay After Delivery</option>
+    </select>
+
+    <button onclick="checkout()"
+            class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition">
+      Place Order
+    </button>
+  </section>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const list = document.getElementById('cart-items');
+    let total = 0;
+
+    cart.forEach(({name, price, qty}, i) => {
+      const li = document.createElement('li');
+      li.className = "flex justify-between items-center";
+
+      const info = document.createElement('span');
+      info.textContent = `${qty}× ${name} @ $${price} each`;
+
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = '✕';
+      removeBtn.className = 'text-red-500 hover:text-red-700';
+      removeBtn.onclick = () => {
+        cart.splice(i,1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload();
+      };
+
+      li.append(info, removeBtn);
+      list.appendChild(li);
+      total += price * qty;
+    });
+
+    document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
+
+    function checkout() {
+      const method = document.getElementById('payment-method').value;
+      const details = cart.map(i => `${i.qty}× ${i.name} ($${i.price})`).join('%0A');
+      const msg = `Hello Lucky Chicken!%0AOrder:%0A${details}%0ATotal: $${total.toFixed(2)}%0APayment: ${method}`;
+
+      localStorage.removeItem('cart');
+
+      if (method === 'ecocash' || method === 'inbucks') {
+        window.location.href = `https://wa.me/263787260086?text=${msg}`;
+      } else {
+        alert("✅ Thank you! Your order will be paid after delivery.");
+        window.location.href = "success.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

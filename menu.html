@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu - Lucky Chicken</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <img src="images/logo.png" alt="Lucky Chicken Logo" class="h-12">
+    <nav class="space-x-4 text-sm md:text-base">
+      <a href="index.html" class="hover:text-red-600">Home</a>
+      <a href="menu.html" class="hover:text-red-600 font-bold">Menu</a>
+      <a href="cart.html" class="hover:text-red-600">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Menu Section -->
+  <section class="py-16 bg-white">
+    <h2 class="text-3xl text-center font-bold mb-10">Our Menu</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+
+      <!-- Food Item Card -->
+      <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden text-center">
+        <img src="https://images.unsplash.com/photo-1600891965050-3d1b4e3a1b92?auto=format&fit=crop&w=800&q=80"
+             alt="Spicy Grilled Chicken" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Spicy Grilled Chicken</h3>
+          <p class="text-sm text-gray-600 mb-2">Price: $5</p>
+
+          <!-- Quantity selector -->
+          <div class="flex items-center justify-center mb-3">
+            <button onclick="changeQty(-1,'Spicy Grilled Chicken')" class="px-2 bg-gray-200">–</button>
+            <input type="number" id="qty-Spicy Grilled Chicken" value="1" min="1"
+                   class="w-12 text-center border mx-2"/>
+            <button onclick="changeQty(1,'Spicy Grilled Chicken')" class="px-2 bg-gray-200">+</button>
+          </div>
+
+          <button onclick="addToCart('Spicy Grilled Chicken',5)"
+                  class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- TODO: Duplicate & customize the above block for each menu item -->
+
+    </div>
+  </section>
+
+  <script>
+    function changeQty(delta, name) {
+      const input = document.getElementById(`qty-${name}`);
+      let v = parseInt(input.value) + delta;
+      if (v < 1) v = 1;
+      input.value = v;
+    }
+
+    function addToCart(name, price) {
+      const qty = parseInt(document.getElementById(`qty-${name}`).value) || 1;
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price, qty });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${qty}× ${name} added to cart!`);
+    }
+  </script>
+
+</body>
+</html>
