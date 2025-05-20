@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucky Chicken</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #fefefe; color: #333; }
+    header {
+      background: #ff9800; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    }
+    header img { height: 50px; }
+    nav a {
+      margin-left: 1rem; color: white; text-decoration: none; font-weight: bold;
+    }
+    .hero {
+      background: url('https://img.freepik.com/free-photo/side-view-doner-with-grilled-chicken-greens-lettuce-tomato-french-fries-table_141793-4881.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740') center/cover no-repeat;
+      height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    }
+    .hero h1 { font-size: 3rem; color: white; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); }
+    .hero a {
+      margin-top: 1rem; padding: 0.8rem 2rem; background: white; color: #ff9800; border-radius: 2rem; text-decoration: none; font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero a:hover { background: #ffb74d; }
+    footer {
+      text-align: center; padding: 1rem; background: #ff9800; color: white;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="descarga-removebg-preview (1).png" alt="Lucky Chicken Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order Now</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fresh & Crispy Chicken Delivered Fast!</h1>
+    <a href="menu.html">See Our Menu</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Lucky Chicken. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucky Chicken – Order Received</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: #e0f7fa;
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh; overflow-x: hidden;
+    }
+    /* Flowing ice background */
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: -50%;
+      width: 200%; height: 100%;
+      background: url('https://img.freepik.com/premium-photo/flying-set-colorful-spices-peppers-chili-garlic-laurel-leaf-herbs-air_911863-1133.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740') center/cover no-repeat;
+      opacity: 0.1; z-index: -1;
+      animation: iceFlow 20s linear infinite;
+    }
+    @keyframes iceFlow {
+      from { transform: translateX(0); }
+      to { transform: translateX(50%); }
+    }
+    .box {
+      text-align: center; background: white;
+      padding: 2.5rem; border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      animation: pop 0.6s ease-out both;
+      max-width: 360px; width: 90%; margin: auto;
+    }
+    @keyframes pop {
+      from { transform: scale(0.6); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    h1 {
+      color: #00796b; font-size: 2rem; margin-bottom: 1rem;
+    }
+    p {
+      margin: 0.8rem 0; font-size: 1.1rem; color: #333;
+    }
+    .btn-home {
+      display: inline-block; margin-top: 1.5rem;
+      padding: 0.8rem 1.6rem; background: #ff9800;
+      color: white; text-decoration: none;
+      border-radius: 6px; font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-home:hover {
+      background: #e65100;
+    }
+    @media (max-width: 480px) {
+      .box { padding: 1.8rem; }
+      h1 { font-size: 1.6rem; }
+      p { font-size: 1rem; }
+      .btn-home { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>🎉 Order Received!</h1>
+    <p>Thank you for ordering from <strong>Lucky Chicken</strong>.</p>
+    <p><strong>Please call us or send a message about your order.</strong></p>
+    <a href="index.html" class="btn-home">← Back to Home</a>
+  </div>
+
+</body>
+</html>

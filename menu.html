@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucky Chicken Menu</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: #e0f7fa;
+      overflow-x: hidden;
+    }
+    /* Flowing ice background */
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: -50%;
+      width: 200%; height: 100%;
+      background: url('https://img.freepik.com/premium-photo/flying-set-colorful-spices-peppers-chili-garlic-laurel-leaf-herbs-air_911863-1133.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740') center/cover no-repeat;
+      opacity: 0.3; z-index: -1;
+      animation: iceFlow 20s linear infinite;
+    }
+    @keyframes iceFlow {
+      from { transform: translateX(0); }
+      to { transform: translateX(50%); }
+    }
+    header, footer {
+      background: #ff9800; color: white;
+      text-align: center; padding: 1rem;
+    }
+    header img {
+      height: 50px; vertical-align: middle;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white; text-decoration: none;
+      font-weight: bold;
+    }
+    h1 {
+      text-align: center; margin: 2rem 0 1rem;
+      color: #e65100;
+    }
+    .menu-container {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 2rem;
+      padding: 1rem;
+    }
+    .item {
+      width: 260px; background: rgba(255,243,224,0.9);
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .item img {
+      width: 100%; height: 160px; object-fit: cover;
+    }
+    .info {
+      padding: 1rem; text-align: center;
+    }
+    .info h3 {
+      margin: 0.5rem 0; color: #d84315;
+    }
+    .info p {
+      margin: 0.3rem 0; font-size: 1.1rem;
+    }
+    .info a {
+      display: inline-block; margin-top: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #ff9800; color: white;
+      text-decoration: none; border-radius: 20px;
+      transition: background 0.3s;
+    }
+    .info a:hover {
+      background: #e65100;
+    }
+    @media (max-width: 768px) {
+      .menu-container {
+        gap: 1rem; padding: 0.5rem;
+      }
+      .item { width: 45%; }
+    }
+    @media (max-width: 480px) {
+      .item { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="descarga-removebg-preview (1).png" alt="Lucky Chicken Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order Now</a>
+    </nav>
+  </header>
+
+  <h1>Our Best Sellers</h1>
+  <div class="menu-container">
+    <div class="item">
+      <img src="https://img.freepik.com/free-photo/close-up-fried-chicken-drumsticks_23-2148682835.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Crispy Chicken">
+      <div class="info">
+        <h3>Crispy Chicken</h3>
+        <p>$1.50</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://img.freepik.com/free-photo/fried-chicken-with-variety-sauces-french-fries_23-2148646570.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Spicy Wings">
+      <div class="info">
+        <h3>Spicy Wings</h3>
+        <p>$2.50</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://img.freepik.com/premium-photo/divided-hamburger_147620-1305.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Chicken Burger">
+      <div class="info">
+        <h3>Chicken Burger</h3>
+        <p>$2.50</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://img.freepik.com/free-photo/box-fries-with-copy-space_23-2148272980.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Plain Chips">
+      <div class="info">
+        <h3>Plain Chips</h3>
+        <p>$1.00</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://media.istockphoto.com/id/1421688556/photo/beef-shawarma-on-a-dark-background-shawarma-with-beef-in-pita-bread.jpg?b=1&s=612x612&w=0&k=20&c=mf5uLb_L1Qde63jvLhN7rYm7TI2x8BRhhgO2p2gTYCo=" alt="Shawarma">
+      <div class="info">
+        <h3>Shawarma</h3>
+        <p>$4.00</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://img.freepik.com/free-photo/transparent-water-bottle-studio_23-2151049093.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Mineral Water">
+      <div class="info">
+        <h3>Mineral Water</h3>
+        <p>$0.50</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://img.freepik.com/premium-photo/can-pepsi-is-table_925121-800.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Pepsi">
+      <div class="info">
+        <h3>Pepsi</h3>
+        <p>$1.10</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://img.freepik.com/free-photo/classic-hot-dog-with-ketchup-mustard-sauce-isolated-white-background_123827-29747.jpg?uid=R187407010&ga=GA1.1.499621401.1745478982&semt=ais_hybrid&w=740" alt="Hot Dog">
+      <div class="info">
+        <h3>Hot Dog</h3>
+        <p>$6.00</p>
+        <a href="order.html">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Lucky Chicken. All rights reserved.
+  </footer>
+
+</body>
+</html>

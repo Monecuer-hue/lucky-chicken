@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucky Chicken – Place Your Order</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: #fff3e0;
+      overflow-x: hidden;
+    }
+    /* Flowing ice background */
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: -50%;
+      width: 200%; height: 100%;
+      background: url('https://i.ibb.co/YZjMct9/frozen-bg.jpg') center/cover no-repeat;
+      opacity: 0.1; z-index: -1;
+      animation: iceFlow 20s linear infinite;
+    }
+    @keyframes iceFlow {
+      from { transform: translateX(0); }
+      to { transform: translateX(50%); }
+    }
+    header, footer {
+      background: #ff9800; color: white;
+      text-align: center; padding: 1rem;
+    }
+    header img {
+      height: 50px; vertical-align: middle;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem; color: white;
+      text-decoration: none; font-weight: bold;
+    }
+    .form-wrap {
+      max-width: 480px; margin: 2rem auto; background: white;
+      padding: 2rem; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      animation: fadeIn 0.8s ease-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .form-wrap h2 {
+      text-align: center; color: #e65100;
+      margin-bottom: 1.5rem; font-size: 1.8rem;
+    }
+    .form-wrap input, .form-wrap select {
+      width: 100%; padding: 0.8rem;
+      margin: 0.8rem 0; border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+    .form-wrap button {
+      width: 100%; padding: 1rem;
+      background: #ff9800; color: white;
+      border: none; border-radius: 6px;
+      font-size: 1.1rem; cursor: pointer;
+      transition: background 0.3s;
+    }
+    .form-wrap button:hover {
+      background: #e65100;
+    }
+    .payments {
+      margin-top: 2rem; padding: 1.5rem;
+      background: #fff0e5; border-radius: 10px;
+      text-align: center; font-size: 0.95rem;
+    }
+    .payments p {
+      margin: 0.5rem 0;
+    }
+    .whatsapp-btn {
+      display: inline-block; margin-top: 0.8rem;
+      padding: 0.8rem 1.6rem; background: #25D366;
+      color: white; text-decoration: none; border-radius: 6px;
+      font-weight: bold; transition: background 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
+    }
+    @media (max-width: 600px) {
+      .form-wrap { margin: 1rem; padding: 1.5rem; }
+      .form-wrap h2 { font-size: 1.5rem; }
+      .form-wrap input, .form-wrap select, .form-wrap button {
+        font-size: 1rem; padding: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="descarga-removebg-preview (1).png" alt="Lucky Chicken Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order Now</a>
+    </nav>
+  </header>
+
+  <div class="form-wrap">
+    <h2>Place Your Order</h2>
+    <form action="success.html" method="get">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <select name="item" required>
+        <option value="">-- Choose Item --</option>
+        <option value="crispy">Crispy Chicken</option>
+        <option value="wings">Spicy Wings</option>
+        <option value="burger">Chicken Burger</option>
+        <option value="chips">Plain Chips</option>
+        <option value="shawarma">Shawarma</option>
+        <option value="water">Mineral Water</option>
+        <option value="pepsi">Pepsi</option>
+        <option value="hotdog">Hot Dog</option>
+      </select>
+      <input type="text" name="address" placeholder="Delivery Address" required />
+      <button type="submit">Submit Order</button>
+    </form>
+
+    <div class="payments">
+      <h3>Payment Methods</h3>
+      <p><strong>EcoCash:</strong> Dial <code>*151*1*YOUR_NUMBER#</code></p>
+      <p><strong>Inbucks:</strong> Send to <code>YOUR_INBUCKS_NUMBER</code></p>
+      <p><em>After payment, please send proof via WhatsApp or call us.</em></p>
+      <a class="whatsapp-btn"
+         href="https://wa.me/263YOURWHATSAPP?text=Hi%20Lucky%20Chicken,%20I%20have%20just%20ordered%20and%20paid.%20Here%20is%20my%20proof.">
+        📱 WhatsApp Us
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Lucky Chicken. All rights reserved.
+  </footer>
+
+</body>
+</html>
